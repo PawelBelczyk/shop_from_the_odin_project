@@ -1,3 +1,4 @@
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -21,4 +22,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* 
+
+# shop_from_the_odin_project
+project of shop with rails - my first project
+
