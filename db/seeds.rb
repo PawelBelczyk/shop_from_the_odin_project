@@ -8,15 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Product.create!(name: "T-Shirt")
-Product.create!(name: "Shoes")
-Product.create!(name: "Backpack")
-
-User.find_or_create_by!(email_address: "belczykp@gmail.com") do |user|
-  user.password = "bibi444"
-  user.password_confirmation = "bibi444"
-  user.admin = true
-end
-
-user = User.find_by!(email_address: "belczykp@gmail.com")
-user.update!(admin: true)
+admin = User.find_or_initialize_by(email_address: "belczykp@gmail.com")
+admin.password = "bibi444" if admin.new_record?
+admin.password_confirmation = "bibi444" if admin.new_record?
+admin.admin = true
+admin.save!
